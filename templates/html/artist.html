@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{.Artist.Name}} - Details</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <a href="/" class="back-link">&larr; Back to Artists</a>
+
+    <div class="details-container">
+        <img src="{{.Artist.Image}}" alt="{{.Artist.Name}}">
+        <h1>{{.Artist.Name}}</h1>
+        <p><strong>First Album:</strong> {{.Artist.FirstAlbum}}</p>
+        <p><strong>Creation Date:</strong> {{.Artist.CreationDate}}</p>
+
+        <h3 style="margin-top: 20px;">Members</h3>
+        <ul>
+            {{range .Artist.Members}}
+            <li>• {{.}}</li>
+            {{end}}
+        </ul>
+
+        <h3 style="margin-top: 20px;">Concert Locations & Dates</h3>
+        <ul>
+            {{range $location, $dates := .Relation.DatesLocations}}
+            <li>
+                <strong style="color: #1db954;">{{$location}}:</strong> 
+                {{range $dates}}{{.}} {{end}}
+            </li>
+            {{end}}
+        </ul>
+    </div>
+</body>
+</html>
