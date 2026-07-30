@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"groupie-trackers/internal/models"
+	"groupie-tracker1/internal/models"
 )
 
 // Handler holds dependencies needed across all HTTP request handlers,

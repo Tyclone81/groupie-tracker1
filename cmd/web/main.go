@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"groupie-trackers/internal/handlers"
+	"groupie-tracker1/internal/handlers"
 )
 
 func main() {
