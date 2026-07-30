@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Groupie Trackers</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Groupie Trackers</h1>
+        <form action="/" method="GET" class="search-form">
+            <input type="text" name="search" placeholder="Search bands, members...">
+            <button type="submit">Search</button>
+        </form>
+    </header>
+
+    <main class="grid">
+        {{range .}}
+        <a href="/artist?id={{.ID}}" class="card">
+            <img src="{{.Image}}" alt="{{.Name}}">
+            <h2>{{.Name}}</h2>
+            <p>Formed: {{.CreationDate}}</p>
+            <p>First Album: {{.FirstAlbum}}</p>
+        </a>
+        {{else}}
+        <p>No artists found matching your search.</p>
+        {{end}}
+    </main>
+</body>
+</html>
