@@ -5,7 +5,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"groupie-trackers/internal/handlers"
+	"groupie-tracker1/internal/handlers"
 )
 
 func TestRouting(t *testing.T) {
