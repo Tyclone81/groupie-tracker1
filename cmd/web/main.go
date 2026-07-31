@@ -19,7 +19,7 @@ func main() {
 	// StripPrefix removes "/static" from requested URLs like "/static/css/styles.css",
 	// allowing http.FileServer to look up "css/styles.css" inside "./static".
 	fileServer := http.FileServer(http.Dir("./static"))
-	mux.Handle("/static", http.StripPrefix("/static", fileServer))
+	mux.Handle("/static/", http.StripPrefix("/static/", fileServer))
 
 	// Register page handlers
 	mux.HandleFunc("/", h.HomeHandler)        // Home page & Search
